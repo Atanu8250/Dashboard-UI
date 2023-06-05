@@ -1,0 +1,282 @@
+.container {
+     /* height: 100vh; */
+     padding: 30px 40px;
+     display: flex;
+     gap: 40px;
+     background-color: #DDDDDD;
+     position: relative;
+}
+
+
+.sidebar {
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     align-items: flex-start;
+     gap: 35px;
+     background-color: #000;
+     color: #fff;
+     padding: 40px 60px 40px 45px;
+     border-radius: 30px;
+}
+
+.sidebar,
+.sidebar>*,
+.view-cards {
+     transition: all 400ms ease;
+}
+
+.sidebar>h1 {
+     font-size: 2rem;
+     letter-spacing: 1px;
+     font-family: var(--primary-font);
+}
+
+.sidebar>ul {
+     list-style: none;
+}
+
+.navigations {
+     display: grid;
+     gap: 25px;
+}
+
+.nav {
+     cursor: pointer;
+     font-size: 16px;
+     letter-spacing: 1px;
+     border: none;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 10px;
+     background: transparent;
+     color: #fff;
+}
+
+.about {
+     color: #a3a3a3;
+     margin-top: auto;
+     line-height: 35px;
+     font-size: 14px;
+}
+
+
+
+/* ============== MAIN - CONTENT ============== */
+
+.main-content {
+     height: 100%;
+     width: 100%;
+}
+
+.header {
+     padding: 10px 20px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.header>div {
+     margin-left: auto;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 20px;
+}
+
+.search-input {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 5px;
+     background-color: #fff;
+     padding: 5px 14px;
+     border-radius: 10px;
+}
+
+.search-input>input {
+     width: 9rem;
+     outline: none;
+     border: none;
+     font-size: 18px;
+}
+
+.bell-icon {
+     display: grid;
+     place-items: center;
+}
+
+.bell-icon>img {
+     width: 17px;
+     aspect-ratio: 1;
+     cursor: pointer;
+}
+
+.profile {
+     height: 30px;
+     aspect-ratio: 1;
+     border-radius: 50%;
+     border: 1px solid #cdcdcd;
+     overflow: hidden;
+}
+
+.profile>img {
+     width: 100%;
+     object-fit: contain;
+     scale: 1.1;
+}
+
+
+
+
+.view-cards {
+     padding: 0px 20px;
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     justify-content: center;
+     align-items: center;
+     gap: 35px;
+}
+
+.view-card {
+     border-radius: 20px;
+     padding: 20px 25px;
+}
+
+/* icon-div */
+.view-card>div:first-child {
+     display: flex;
+}
+
+.view-card>div:first-child>img {
+     margin-left: auto;
+}
+
+/* Card-info */
+.view-card>div:last-child {
+     line-height: 25px;
+}
+
+.view-card>div:last-child>p {
+     font-size: 14px;
+}
+
+.view-card>div:last-child>h2 {
+     letter-spacing: 1px;
+}
+
+
+
+
+
+/* ================ BOTTOM-SECTION ================ */
+.bottom-part {
+     margin: 20px;
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 30px;
+}
+
+.bottom-part>section {
+     padding: 20px;
+     background-color: #fff;
+     border-radius: 20px;
+}
+
+
+.today-schedule>div:first-child {
+     display: flex;
+     justify-content: space-between;
+     align-items: flex-end;
+}
+
+.today-schedule>div:first-child>a {
+     font-size: 12px;
+     text-decoration: none;
+     color: #a3a3a3;
+}
+
+
+/* for smooth transformation */
+.navigations,
+.header>div,
+.sidebar,
+.sidebar>*,
+.view-cards {
+     transition: all 400ms ease;
+}
+
+
+/* Media queries for all screen-size compatibility */
+
+@media all and (width <=1024px) {
+     .sidebar {
+          z-index: 10;
+          position: fixed;
+          bottom: 10px;
+          left: 50%;
+          transform: translate(-50%, 0);
+          flex-direction: row;
+          padding: 15px 40px;
+          scroll-padding-bottom: 150px;
+          opacity: 0.2;
+          transition: opacity 400ms ease;
+     }
+
+     .sidebar:hover {
+          opacity: 1;
+     }
+
+     .navigations {
+          display: flex;
+     }
+
+     .sidebar>h1 {
+          display: none;
+     }
+
+     .sidebar>ul:last-child {
+          display: none;
+     }
+}
+
+
+@media all and (width <=936px) {
+     .view-cards {
+          grid-template-columns: repeat(2, 1fr);
+     }
+}
+
+@media all and (width <=730px) {
+
+     .navigations button>p {
+          display: none;
+     }
+
+     .container {
+          padding: 20px 10px;
+     }
+
+     .bottom-part {
+          grid-template-columns: repeat(1, 1fr);
+     }
+}
+
+@media all and (width <=463px) {
+
+     .header>div {
+          gap: 5px;
+     }
+
+     .view-cards {
+          margin-top: 20px;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 15px;
+     }
+
+
+     .search-input>input {
+          width: 5rem;
+     }
+}

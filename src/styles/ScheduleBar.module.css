@@ -1,0 +1,31 @@
+.event {
+     padding: 5px 15px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: flex-start;
+     gap: 2px;
+     position: relative;
+     margin: 8px 0;
+}
+
+.event::before{
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 6px;
+     background-color: var(--stripe-color);
+}
+
+/* titile */
+.event>h4 {
+     color: #666666;
+     font-size: 14px;
+}
+
+.event>p {
+     font-size: 12px;
+     color: #999999;
+}

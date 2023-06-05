@@ -1,0 +1,18 @@
+.pie-chart-section>div:first-child {
+     display: flex;
+     justify-content: space-between;
+     align-items: flex-end;
+}
+
+.select-time {
+     background-color: transparent;
+     font-size: 12px;
+     border: none;
+     color: #858585;
+     outline: none;
+}
+
+.pie-chart{
+     margin-top: 10px;
+     height: 1fr;
+}

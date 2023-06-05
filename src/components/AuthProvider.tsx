@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
-import styles from '@/app/page.module.css'
+import styles from '@/styles/page.module.css';
 
 type Props = {
      logo: string,
@@ -10,9 +10,9 @@ type Props = {
 function AuthProvider({ logo, title }: Props) {
      return (
           <button className={styles['auth-provider']}>
-               <aside>
+               <bdi>
                     <img src={logo} alt={`${title}-icon`} width={14} height={14} />
-               </aside>
+               </bdi>
                <p>Sign in with {title}</p>
           </button>
      )

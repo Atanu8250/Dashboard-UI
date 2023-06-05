@@ -1,0 +1,24 @@
+.container {
+     flex: 1;
+     margin: 20px;
+     background-color: #fff;
+     border-radius: 20px;
+     padding: 15px 20px;
+}
+
+.select-time {
+     background-color: transparent;
+     font-size: 12px;
+     border: none;
+     color: #858585;
+     outline: none;
+}
+
+
+.line-chart {
+     height: 220px;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}

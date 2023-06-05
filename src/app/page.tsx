@@ -1,5 +1,6 @@
-import AuthProvider from '@/components/AuthProvider'
-import styles from './page.module.css'
+import styles from '@/styles/page.module.css';
+import InputElem from '@/components/InputElem';
+import AuthProvider from '@/components/AuthProvider';
 
 export default function Home() {
      return (
@@ -21,14 +22,8 @@ export default function Home() {
                          </div>
 
                          <form>
-                              <div className={styles["input-grp"]}>
-                                   <label htmlFor="email">Email address</label>
-                                   <input name='email' type="email" placeholder='Enter your Email' defaultValue='johndoe@gmail.com' />
-                              </div>
-                              <div className={styles["input-grp"]}>
-                                   <label htmlFor="pwd">Password</label>
-                                   <input name='pwd' type="password" placeholder='Enter your Password' defaultValue='johndoe' />
-                              </div>
+                              <InputElem type='email' label='Email address' defaultValue='johndoe@gmail.com' placeholder='Enter your Email' />
+                              <InputElem type='password' label='Password' defaultValue='johndoe' placeholder='Enter your Password' />
                               <a href="#">Forgot Password?</a>
                               <button type="submit">Sign In</button>
                          </form>
