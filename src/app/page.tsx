@@ -153,7 +153,7 @@ function Dashboard() {
                                         <div>
                                              <img src={session?.user?.image || 'https://img.freepik.com/premium-vector/businessman-avatar-cartoon-character-profile_18591-50141.jpg'} alt="user-profile" />
                                         </div>
-                                        <p>Name: {session?.user?.name || "--"}</p>
+                                        <p><bdi>Name:</bdi> {session?.user?.name || "--"}</p>
                                         <p>{session?.user?.email || "--"}</p>
                                         <button
                                              onClick={() => { signOut() }}

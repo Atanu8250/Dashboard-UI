@@ -138,7 +138,7 @@
      gap: 15px;
      padding: 20px 10px;
      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-     transition: right 300ms ease-in;
+     transition: right 200ms ease-in-out;
 }
 
 /* Profile pic */
@@ -156,6 +156,10 @@
      object-fit: contain;
 }
 
+.user-info bdi{
+     color: #d92323;
+}
+
 .user-info>p {
      font-weight: 600;
      font-size: 14px;
@@ -163,7 +167,7 @@
 }
 
 .user-info>p:first-child {
-     color: #000;
+     color: #2b2b2b;
 }
 
 .user-info>p:last-child {
