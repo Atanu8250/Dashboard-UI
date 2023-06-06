@@ -1,10 +1,10 @@
 .container {
-     /* height: 100vh; */
      padding: 30px 40px;
      display: flex;
      gap: 40px;
      background-color: #DDDDDD;
      position: relative;
+     font-family: var(--primary-font);
 }
 
 
@@ -124,7 +124,6 @@
 .profile>img {
      width: 100%;
      object-fit: contain;
-     scale: 1.1;
 }
 
 

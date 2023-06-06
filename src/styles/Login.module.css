@@ -9,6 +9,7 @@
      color: #fff;
      display: grid;
      place-items: center;
+     font-family: var(--primary-font);
 }
 
 .left-side>h1 {
