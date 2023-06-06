@@ -1,9 +1,16 @@
+'use client'
 import styles from '@/styles/Login.module.css';
 import InputElem from '@/components/InputElem';
 import AuthProvider from '@/components/AuthProvider';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 
 export default function Home() {
+     const router = useRouter();
+     const { data: session } = useSession();
+
+     if (session) router.push('/');
 
      return (
           <main className={styles.main}>
