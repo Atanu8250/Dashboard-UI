@@ -113,18 +113,77 @@
      cursor: pointer;
 }
 
-.profile {
+.profile>div {
      height: 30px;
      aspect-ratio: 1;
      border-radius: 50%;
      border: 1px solid #cdcdcd;
      overflow: hidden;
+     position: relative;
 }
 
-.profile>img {
+.profile>div>img {
      width: 100%;
      object-fit: contain;
 }
+
+.user-info {
+     position: absolute;
+     top: 80px;
+     background-color: #fff;
+     border-radius: 20px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     gap: 15px;
+     padding: 20px 10px;
+     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     transition: right 300ms ease-in;
+}
+
+/* Profile pic */
+.user-info>div:first-child{
+     margin-inline: auto;
+     border-radius: 50%;
+     border: none;
+     outline: 2px solid black;
+     outline-offset: 5px;
+     overflow: hidden;
+}
+
+.user-info>div:first-child>img{
+     width: 100%;
+     object-fit: contain;
+}
+
+.user-info>p {
+     font-weight: 600;
+     font-size: 14px;
+     white-space: nowrap;
+}
+
+.user-info>p:first-child {
+     color: #000;
+}
+
+.user-info>p:last-child {
+     color: #a3a3a3;
+}
+
+.user-info button{
+     margin-inline: auto;
+     width: fit-content;
+     padding: 7px 20px;
+     border: none;
+     background-color: #ee8484;
+     color: #fff;
+     font-weight: 600;
+     letter-spacing: 1px;
+     outline: 2px solid #98d89e;
+     outline-offset: 5px;
+     cursor: pointer;
+}
+
 
 
 

@@ -1,15 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 "use client"
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '@/styles/Dashboard.module.css';
 import SideNav from '@/components/SideNav';
 import ViewCard from '@/components/ViewCard';
 import LineChart from '@/components/LineChart';
 import PieChart from '@/components/PieChart';
 import ScheduleBar from '@/components/ScheduleBar';
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import Loading from '@/components/Loading';
 
 const navigations = [
      {
@@ -86,13 +87,31 @@ const schedularData = [
 
 function Dashboard() {
      const router = useRouter();
-     const { data: session } = useSession();
+     const [showUserInfo, setShowUserInfo] = useState<boolean>(false)
+     const { data: session, status } = useSession();
+     const [isSessionValidated, setIsSessionValidated] = useState<boolean>(false);
 
      useEffect(() => {
-          if (session === undefined) { router.push('/login') }
-     }, [session])
+          const checkSession = async () => {
+               console.log({ status, session })
+               if (status === 'unauthenticated' && session === null) {
+                    // Session has expired or is invalid, redirect to login
+                    router.push('/login');
+               } else if (status === 'authenticated' && session !== null) {
+                    // Session is valid
+                    setIsSessionValidated(true);
+               }
+          };
 
-     return (
+          const timeout = setTimeout(checkSession, 2000); // Check session after 2 sec
+
+          return () => {
+               clearTimeout(timeout); // Clean up the interval on component unmount
+          };
+     }, [session, status, router]);
+
+
+     return !isSessionValidated ? <Loading /> : (
           <div className={styles.container}>
                <aside className={styles.sidebar}>
                     <h1>Board.</h1>
@@ -124,7 +143,23 @@ function Dashboard() {
                                    <img src="/bell_icon.svg" alt="bell-icon" />
                               </div>
                               <div className={styles.profile}>
-                                   <img src={session?.user?.image || 'https://img.freepik.com/premium-vector/businessman-avatar-cartoon-character-profile_18591-50141.jpg'} alt="user-profile" />
+                                   <div onClick={() => setShowUserInfo(prev => !prev)}>
+                                        <img src={session?.user?.image || 'https://img.freepik.com/premium-vector/businessman-avatar-cartoon-character-profile_18591-50141.jpg'} alt="user-profile" />
+                                   </div>
+                                   <article 
+                                   className={styles['user-info']} 
+                                   style={{right: (showUserInfo ? '10px' : '-250px')}}
+                                   >
+                                        <div>
+                                             <img src={session?.user?.image || 'https://img.freepik.com/premium-vector/businessman-avatar-cartoon-character-profile_18591-50141.jpg'} alt="user-profile" />
+                                        </div>
+                                        <p>Name: {session?.user?.name || "--"}</p>
+                                        <p>{session?.user?.email || "--"}</p>
+                                        <button
+                                             onClick={() => { signOut() }}
+                                        >Sign-out
+                                        </button>
+                                   </article>
                               </div>
                          </div>
                     </section>
