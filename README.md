@@ -13,11 +13,11 @@ Responsive fluid Dashboard-UI, assignment for [Listed-inc](https://listed.fans/)
 
 ## Pages
 ### :small_blue_diamond: Sign-in Page
-![sign-in](https://github.com/Atanu8250/Dashboard-UI/assets/94675329/8feda1b1-bcf2-47ed-b154-710c6d0b51b7)
+![sign-in](https://github.com/Atanu8250/Dashboard-UI/assets/94675329/248e08a0-0e65-4a63-864a-762dba7cd823)
 
 ---
 
 ### :small_blue_diamond: Dashboard Page
-![dashboard](https://github.com/Atanu8250/Dashboard-UI/assets/94675329/e3f9ea4f-04e2-4b48-845f-182c9db97fce)
+![dashboard](https://github.com/Atanu8250/Dashboard-UI/assets/94675329/405e47b0-6eff-4e82-8a17-fa8def353345)
 
 # Thank you 🤍
